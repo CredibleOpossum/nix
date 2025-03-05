@@ -3,7 +3,7 @@
     disk = {
       main = {
         type = "disk";
-        device = "/dev/vda";
+        device = "/dev/sda";
         content = {
           type = "gpt";
           partitions = {
@@ -21,12 +21,18 @@
                 mountOptions = [ "umask=0077" ];
               };
             };
-            root = {
+            luks = {
               size = "100%";
               content = {
-                type = "filesystem";
-                format = "btrfs";
-                mountpoint = "/";
+                type = "luks";
+                name = "crypted";
+                settings.allowDiscards = true;
+                passwordFile = "/tmp/secret.key";
+                content = {
+                  type = "filesystem";
+                  format = "ext4";
+                  mountpoint = "/";
+                };
               };
             };
           };

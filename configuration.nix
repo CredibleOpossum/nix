@@ -20,6 +20,7 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.efiInstallAsRemovable = true;
+  boot.grub.enableCryptodisk = true;
 
   # Non-free NVIDIA
   nixpkgs.config.allowUnfree = true;
