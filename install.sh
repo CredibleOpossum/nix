@@ -2,8 +2,8 @@
 
 set -e
 
-echo "WARNING: By default this will attempt to install to /dev/vda by default, also wiping all data on that disk (if it exists). Make sure this device has no filesystem."
-echo "You can easily change this in disko.nix"
+echo "WARNING: By default this will attempt to install to the drive specified by disko_config.nix, also wiping all data on that disk (if it exists). Make sure this device has no filesystem."
+echo "You can change this by changing the device specified in the file."
 read -p "Are you sure you want to continue with the install? [y/N]: "
 echo
 if [[ "$REPLY" =~ ^[Yy]$ ]]; then

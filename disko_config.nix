@@ -23,14 +23,14 @@
             };
             luks = {
               size = "100%";
+              label = "luks";
               content = {
                 type = "luks";
-                name = "crypted";
+                name = "encrypted_root";
                 settings.allowDiscards = true;
-                passwordFile = "/tmp/secret.key";
                 content = {
                   type = "filesystem";
-                  format = "ext4";
+                  format = "btrfs";
                   mountpoint = "/";
                 };
               };

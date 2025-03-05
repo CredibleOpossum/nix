@@ -20,7 +20,7 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.efiInstallAsRemovable = true;
-  boot.grub.enableCryptodisk = true;
+  boot.loader.grub.enableCryptodisk = true;
 
   # Non-free NVIDIA
   nixpkgs.config.allowUnfree = true;
@@ -50,14 +50,14 @@
   environment.systemPackages = with pkgs; [
      git
      vim
+     wget
+     fish
+     neofetch
 
      kdePackages.ark
 
      mpv
-     wget
      ffmpeg_6-full
-     fish
-     neofetch
   ];  
 
   # Pipewire
