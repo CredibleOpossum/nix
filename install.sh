@@ -14,7 +14,7 @@ if [[ "$REPLY" =~ ^[Yy]$ ]]; then
     sudo nixos-generate-config --no-filesystems --root /mnt
     
     # Move configs
-    sudo cp *.nix /mnt/etc/nixos
+    sudo cp * /mnt/etc/nixos
     
     # Install nixos
     sudo nixos-install --root /mnt --flake '/mnt/etc/nixos#nixos'
