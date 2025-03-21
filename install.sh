@@ -7,7 +7,7 @@ echo "You can change this by changing the device specified in the file."
 read -p "Are you sure you want to continue with the install? [y/N]: "
 echo
 if [[ "$REPLY" =~ ^[Yy]$ ]]; then
-    # Partition device, default /dev/vda
+    # Partition device, dangerous.
     sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko disko_config.nix
     
     # Generate config without filesystem as it was already done by disko.
